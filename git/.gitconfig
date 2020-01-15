@@ -1,0 +1,25 @@
+[user]
+	name = Victor Gama
+	email = hey@vito.io
+	signingkey = F98F7B8A
+
+[commit]
+	gpgsign = true
+
+[merge]
+	ff = false
+
+[http]
+	cookiefile = /Users/victorgama/.gitcookies
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[pull]
+	rebase = true
+
+[credential]
+	helper = osxkeychain
