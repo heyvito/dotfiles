@@ -1,0 +1,30 @@
+{
+	"atomic_save": true,
+	"auto_find_in_selection": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Nord/Nord.sublime-color-scheme",
+	"default_line_ending": "unix",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Victor Mono Bold",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		75,
+		80,
+		100
+	],
+	"scroll_past_end": true,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
+
