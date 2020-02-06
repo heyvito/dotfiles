@@ -78,6 +78,14 @@ compctl -W $GOPATH/src/github.com/ -/ gogo
 hack() { cd ~/Hacking/$1; }
 compctl -W ~/Hacking/ -/ hack
 
+function tlvd() {
+    pbpaste \
+    | awk '{printf "%s ", $0}' \
+    | sed -E 's/(0x[^ ]+:|0x|[[:blank:]])//g' \
+    | tlvp
+}
+
+
 function spectrum_ls() {
   for code in {000..255}; do
     print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
