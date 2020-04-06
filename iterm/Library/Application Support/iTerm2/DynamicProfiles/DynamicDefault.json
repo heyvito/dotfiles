@@ -122,7 +122,6 @@
       "Title Components" : 2,
       "Custom Command" : "No",
       "ASCII Anti Aliased" : true,
-      "Non Ascii Font" : "Monaco 12",
       "Vertical Spacing" : 1,
       "Use Bold Font" : true,
       "Option Key Sends" : 2,
@@ -134,11 +133,11 @@
         "Green Component" : 0
       },
       "Background Color" : {
-        "Red Component" : 0.11372549086809158,
+        "Red Component" : 0.058823529411764705,
         "Color Space" : "sRGB",
-        "Blue Component" : 0.15686275064945221,
+        "Blue Component" : 0.078431372549019607,
         "Alpha Component" : 1,
-        "Green Component" : 0.12156862765550613
+        "Green Component" : 0.062745098039215685
       },
       "Character Encoding" : 4,
       "Ansi 11 Color" : {
@@ -406,7 +405,8 @@
         "Alpha Component" : 1,
         "Green Component" : 0.87058824300765991
       },
-      "Normal Font" : "VictorMono-Regular 12",
+      "Normal Font" : "VictorMonoNerdFontComplete-Regular 12",
+      "Non Ascii Font" : "VictorMonoNerdFontComplete-Regular 12",
       "Ansi 1 Color" : {
         "Red Component" : 0.9529411792755127,
         "Color Space" : "sRGB",

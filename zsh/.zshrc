@@ -3,7 +3,7 @@ autoload -Uz compinit
 
 ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="victorgama"
-ZSH_THEME="vito"
+ZSH_THEME="theto"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(git sublime osx httpie brew docker colored-man-pages docker-compose golang)
