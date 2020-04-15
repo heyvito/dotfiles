@@ -1,3 +1,15 @@
+#    ,ggg,         ,gg                         
+#   dP""Y8a       ,8P        I8                
+#   Yb, `88       d8'        I8                
+#    `"  88       88  gg  88888888             
+#        88       88  ""     I8                
+#        I8       8I  gg     I8      ,ggggg,   
+#        `8,     ,8'  88     I8     dP"  "Y8ggg
+#         Y8,   ,8P   88    ,I8,   i8'    ,8I  
+#          Yb,_,dP  _,88,_ ,d88b, ,d8,   ,d8'  
+#           "Y8P"   8P""Y888P""Y88P"Y8888P"    
+
+
 export ZSH_COMPDUMP="/Users/$USER/.zcompdump"
 autoload -Uz compinit
 
