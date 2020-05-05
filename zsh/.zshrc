@@ -11,6 +11,7 @@
 
 
 export ZSH_COMPDUMP="/Users/$USER/.zcompdump"
+export LC_ALL=en_US.UTF-8
 autoload -Uz compinit
 
 ZSH=$HOME/.oh-my-zsh
