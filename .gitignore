@@ -1,1 +1,4 @@
 plugged/
+.DS_Store
+!Preferences.sublime-settings
+sublime/*
