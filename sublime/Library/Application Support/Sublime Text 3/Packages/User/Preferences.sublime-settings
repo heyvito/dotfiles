@@ -2,7 +2,7 @@
 	"atomic_save": true,
 	"auto_find_in_selection": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Nord/Nord.sublime-color-scheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
