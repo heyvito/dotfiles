@@ -1,8 +1,8 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # Find Firefox default profile
 profile=$(find "$HOME/Library/Application Support/Firefox/Profiles" -name '*.default-nightly' || (echo 'Firefox Nightly profile not found.' && exit 1))
-settings="$HOME/tmp/user.js"
+settings="$profile/user.js"
 echo "Updating $settings..."
 hostname="$(hostname)"
 echo "" > "$settings"
