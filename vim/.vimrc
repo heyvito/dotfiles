@@ -14,6 +14,9 @@ set smarttab
 set nrformats-=octal
 set laststatus=2
 set noshowmode
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 nmap <leader>1 <Plug>BuffetSwitch(1)
 nmap <leader>2 <Plug>BuffetSwitch(2)
