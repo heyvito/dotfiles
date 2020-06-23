@@ -29,7 +29,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#BBBBBB4D</string>
+          <string>#BBBBBB96</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -192,6 +192,19 @@
         <dict>
           <key>foreground</key>
           <string>#B877DBE6</string>
+          <key>fontStyle</key>
+          <string>italic</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Logical Operators</string>
+        <key>scope</key>
+        <string>keyword.operator.logical</string>
+        <key>settings</key>
+        <dict>
+          <key>fontStyle</key>
+          <string>normal</string>
         </dict>
       </dict>
       <dict>
@@ -483,3 +496,4 @@
     <string/>
   </dict>
 </plist>
+
