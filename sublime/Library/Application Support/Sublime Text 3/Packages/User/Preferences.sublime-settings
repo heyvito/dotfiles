@@ -2,7 +2,7 @@
 	"atomic_save": true,
 	"auto_find_in_selection": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/Celestial/Celestial.tmTheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
@@ -27,4 +27,3 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
-
