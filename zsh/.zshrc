@@ -15,7 +15,7 @@ export LC_ALL=en_US.UTF-8
 autoload -Uz compinit
 
 ZSH=$HOME/.oh-my-zsh
-DEFAULT_USER="victorgama"
+DEFAULT_USER="heyvito"
 ZSH_THEME="theto"
 COMPLETION_WAITING_DOTS="true"
 
