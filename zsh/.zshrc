@@ -1,3 +1,4 @@
+# vim: set expandtab ts=2 sw=2 :
 #    ,ggg,         ,gg
 #   dP""Y8a       ,8P        I8
 #   Yb, `88       d8'        I8
@@ -9,7 +10,6 @@
 #          Yb,_,dP  _,88,_ ,d88b, ,d8,   ,d8'
 #           "Y8P"   8P""Y888P""Y88P"Y8888P"
 
-
 export ZSH_COMPDUMP="/Users/$USER/.zcompdump"
 export LC_ALL=en_US.UTF-8
 autoload -Uz compinit
@@ -19,29 +19,20 @@ DEFAULT_USER="heyvito"
 ZSH_THEME="theto"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git sublime osx httpie brew docker colored-man-pages docker-compose golang)
+plugins=(git sublime osx docker colored-man-pages docker-compose golang)
 
 source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/Hacking/go
 export GO111MODULE=on
 export WORKON_HOME=$HOME/.virtualenvs
-export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$NODEBIN:/usr/local/share/npm/bin:$GOPATH/bin:~/Library/Python/3.6/bin:$HOME/.cargo/bin:/usr/local/lib/ruby/gems/2.6.0/bin
+export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 export PYTHONDONTWRITEBYTECODE=1
 export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.envs ] && source ~/.envs
-
-function docker-compose {
-  wd=$(pwd)
-  if [[ "$wd" =~ ^/Users/victorgama/Hacking.* ]]; then
-    wd=$(pwd | sed "s/\/Users\/victorgama\/Hacking\///" | sed "s/\//-/g")
-    export COMPOSE_PROJECT_NAME=$wd
-  fi
-  /usr/local/bin/docker-compose $@
-}
 
 alias curlimg='xargs curl | imgcat'
 alias dcr='docker-compose run --rm $@'
@@ -57,14 +48,24 @@ alias ss='slack-status'
 unalias gr # created by 'git' plugin. Originally aliases to 'git remote'.
 unalias grm # created by 'git' plugin. Originally aliases to 'git rm'.
 
+docker-compose() {
+  wd=$(pwd)
+  cu=$(whoami)
+  if [[ "$wd" =~ ^/Users/$cu/Hacking.* ]]; then
+    wd=$(pwd | sed "s/\/Users\/$cu\/Hacking\///" | sed "s/\//-/g")
+    export COMPOSE_PROJECT_NAME=$wd
+  fi
+  /usr/local/bin/docker-compose $@
+}
+
 _gb() {
-    local _gb_base=$(git remote get-url origin \
-                        | sed -E 's/.*(@|\/\/)(.*)\.git/\2/' \
-                        | sed 's/:/\//g');
-    if [[ "$_gb_base" == "" ]]; then
-        return 1;
-    fi
-    _gh_url="https://$_gb_base";
+  local _gb_base=$(git remote get-url origin \
+                      | sed -E 's/.*(@|\/\/)(.*)\.git/\2/' \
+                      | sed 's/:/\//g');
+  if [[ "$_gb_base" == "" ]]; then
+    return 1;
+  fi
+  _gh_url="https://$_gb_base";
 }
 _gtgh() { open "$_gh_url/$1"; unset _gh_url; }
 
@@ -75,32 +76,36 @@ grin() { _gb && _gtgh "issues/new/choose" } # Go to Repository Issues for
 grm() { _gb && _gtgh "milestones" } # Go to Repository Milestones
 grr() { _gb && _gtgh "releases" }
 grnp() {
-    BRANCH_NAME=$(git symbolic-ref HEAD | sed 's/refs\/heads\///g')
-    _gb && _gtgh "compare/$BRANCH_NAME?expand=1"
+  BRANCH_NAME=$(git symbolic-ref HEAD | sed 's/refs\/heads\///g')
+  _gb && _gtgh "compare/$BRANCH_NAME?expand=1"
 }
 
 gogo() {
-    if [[ "$1" == *"/"* ]]; then
-        cd $GOPATH/src/github.com/$1
-    else
-        cd $GOPATH/src/github.com/$DEFAULT_USER/$1
-    fi
+  if [[ "$1" == *"/"* ]]; then
+    cd $GOPATH/src/github.com/$1
+  else
+    cd $GOPATH/src/github.com/$DEFAULT_USER/$1
+  fi
 }
 compctl -W $GOPATH/src/github.com/ -/ gogo
 
 hack() { cd ~/Hacking/$1; }
 compctl -W ~/Hacking/ -/ hack
 
-function tlvd() {
-    pbpaste \
+tlvd() {
+  pbpaste \
     | awk '{printf "%s ", $0}' \
+    | perl -pe 's/0x([0-9a-fA-F])(?=[^0-9a-fA-F])/0x0$1/g' \
     | sed -E 's/(0x[^ ]+:|0x|[[:blank:]])//g' \
     | tlvp
 }
 
-
-function spectrum_ls() {
+spectrum_ls() {
   for code in {000..255}; do
     print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
   done
+}
+
+cljdoc() {
+    open "https://clojuredocs.org/search?q=$1"
 }
