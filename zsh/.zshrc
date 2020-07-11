@@ -107,5 +107,14 @@ spectrum_ls() {
 }
 
 cljdoc() {
-    open "https://clojuredocs.org/search?q=$1"
+  term="$1"
+  if [[ "$term" == "/"* ]]; then
+    open "https://clojuredocs.org/search?q=${term:1}"
+  elif [[ "$term" == "c."* ]]; then
+    open "https://clojuredocs.org/clojure.core${term:1}"
+  elif [[ "$term" == *"/"* ]]; then
+    open "https://clojuredocs.org/$term"
+  else
+    open "https://clojuredocs.org/clojure.core/$term"
+  fi
 }
