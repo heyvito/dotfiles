@@ -100,12 +100,6 @@ tlvd() {
     | tlvp
 }
 
-spectrum_ls() {
-  for code in {000..255}; do
-    print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
-  done
-}
-
 cljdoc() {
   term="$1"
   if [[ "$term" == "/"* ]]; then
