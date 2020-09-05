@@ -1,5 +1,5 @@
 [user]
-	name = Victor Gama
+	name = Vito Sartori
 	email = hey@vito.io
 	signingkey = F98F7B8A
 
@@ -23,3 +23,5 @@
 
 [credential]
 	helper = osxkeychain
+[url "git@github.com:"]
+	insteadOf = https://github.com/
