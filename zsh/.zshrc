@@ -44,6 +44,7 @@ alias dsa='docker ps -q | xargs docker stop'
 alias dclf='docker-compose logs -f'
 alias pip=/usr/local/bin/pip3
 alias ss='slack-status'
+alias please='sudo'
 
 unalias gr # created by 'git' plugin. Originally aliases to 'git remote'.
 unalias grm # created by 'git' plugin. Originally aliases to 'git rm'.
@@ -112,3 +113,4 @@ cljdoc() {
     open "https://clojuredocs.org/clojure.core/$term"
   fi
 }
+
