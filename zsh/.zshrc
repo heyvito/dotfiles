@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/Hacking/go
 export GO111MODULE=on
 export WORKON_HOME=$HOME/.virtualenvs
-export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin
+export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 export PYTHONDONTWRITEBYTECODE=1
