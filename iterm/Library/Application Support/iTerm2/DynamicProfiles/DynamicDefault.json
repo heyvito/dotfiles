@@ -94,7 +94,7 @@
         "Alpha Component" : 1,
         "Green Component" : 0.99215686321258545
       },
-      "Working Directory" : "\/Users\/victorgama",
+      "Working Directory" : "\/Users\/vitosartori",
       "Blinking Cursor" : true,
       "Disable Window Resizing" : true,
       "Sync Title" : false,
@@ -124,7 +124,7 @@
       "Title Components" : 2,
       "Custom Command" : "No",
       "ASCII Anti Aliased" : true,
-      "Non Ascii Font" : "VictorMonoNerdFontComplete-Regular 12",
+      "Non Ascii Font" : "VictorMonoNerdFontCompleteM-Regular 12",
       "Vertical Spacing" : 1,
       "Use Bold Font" : true,
       "Option Key Sends" : 2,
@@ -328,7 +328,7 @@
         }
       },
       "Window Type" : 0,
-      "Cursor Type" : 0,
+      "Cursor Type" : 2,
       "Background Image Location" : "",
       "Blur" : false,
       "Badge Color" : {
@@ -356,20 +356,20 @@
       "ASCII Ligatures" : true,
       "Name" : "Default",
       "Cursor Text Color" : {
-        "Red Component" : 0.99999600648880005,
         "Color Space" : "sRGB",
-        "Blue Component" : 1,
-        "Alpha Component" : 1,
-        "Green Component" : 1
+        "Red Component" : 0,
+        "Green Component" : 0,
+        "Blue Component" : 0,
+        "Alpha Component" : 1
       },
       "Minimum Contrast" : 0,
       "Shortcut" : "",
       "Cursor Color" : {
-        "Red Component" : 0.54040831327438354,
+        "Red Component" : 1,
         "Color Space" : "sRGB",
-        "Blue Component" : 0.64215087890625,
+        "Blue Component" : 1,
         "Alpha Component" : 1,
-        "Green Component" : 0.19702713191509247
+        "Green Component" : 1
       },
       "Transparency" : 0,
       "Ansi 1 Color" : {
@@ -403,7 +403,7 @@
       "Guid" : "276F1793-2DB8-48E2-AF1F-34152C8E8C36",
       "Use Non-ASCII Font" : true,
       "Custom Directory" : "No",
-      "Normal Font" : "VictorMonoNerdFontComplete-Regular 12",
+      "Normal Font" : "VictorMonoNerdFontCompleteM-Regular 12",
       "Link Color" : {
         "Red Component" : 0,
         "Color Space" : "sRGB",
