@@ -29,6 +29,7 @@ nmap <leader>7 <Plug>BuffetSwitch(7)
 nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
+nmap <leader>q :bd<CR>
 let g:buffet_powerline_separators = 1
 
 so ~/.vim/theme.vim
