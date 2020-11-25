@@ -10,7 +10,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'bagrat/vim-buffet'
 
