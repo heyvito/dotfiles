@@ -7,7 +7,7 @@ autocmd StdinReadPre * let s:sted_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 filetype plugin indent on
-set number
+set number relativenumber
 set autoindent
 set backspace=indent,eol,start
 set complete-=i
@@ -18,6 +18,10 @@ set noshowmode
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set hlsearch
+set ignorecase
+set incsearch
+set noswapfile
 
 nmap <leader>1 <Plug>BuffetSwitch(1)
 nmap <leader>2 <Plug>BuffetSwitch(2)
