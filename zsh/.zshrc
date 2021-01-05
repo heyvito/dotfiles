@@ -48,6 +48,7 @@ alias please='sudo'
 
 unalias gr # created by 'git' plugin. Originally aliases to 'git remote'.
 unalias grm # created by 'git' plugin. Originally aliases to 'git rm'.
+unalias gra # created by 'git' plugin. Originally aliases to 'git remote add'.
 
 docker-compose() {
   wd=$(pwd)
@@ -74,8 +75,9 @@ gr() { _gb && _gtgh } # Go to Repository
 gri() { _gb && _gtgh "issues" } # Go to Repository Issues
 grin() { _gb && _gtgh "issues/new/choose" } # Go to Repository Issues for
                                             # creating a New one
+gra() { _gb && _gtgh "actions" } # Go to Repository Actions
 grm() { _gb && _gtgh "milestones" } # Go to Repository Milestones
-grr() { _gb && _gtgh "releases" }
+grr() { _gb && _gtgh "releases" } # Go to Repository Releases
 grnp() {
   BRANCH_NAME=$(git symbolic-ref HEAD | sed 's/refs\/heads\///g')
   _gb && _gtgh "compare/$BRANCH_NAME?expand=1"
