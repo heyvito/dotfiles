@@ -116,3 +116,14 @@ cljdoc() {
   fi
 }
 
+pbjson() {
+  pbpaste > /tmp/pbjson
+  cat /tmp/pbjson | jq | pbcopy
+  rm /tmp/pbjson
+}
+
+pbxml() {
+  pbpaste > /tmp/pbxml
+  xmllint --format /tmp/pbxml | pbcopy
+  rm /tmp/pbxml
+}
