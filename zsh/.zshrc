@@ -83,15 +83,6 @@ grnp() {
   _gb && _gtgh "compare/$BRANCH_NAME?expand=1"
 }
 
-gogo() {
-  if [[ "$1" == *"/"* ]]; then
-    cd $GOPATH/src/github.com/$1
-  else
-    cd $GOPATH/src/github.com/$DEFAULT_USER/$1
-  fi
-}
-compctl -W $GOPATH/src/github.com/ -/ gogo
-
 hack() { cd ~/Hacking/$1; }
 compctl -W ~/Hacking/ -/ hack
 
