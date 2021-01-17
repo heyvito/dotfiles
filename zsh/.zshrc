@@ -124,3 +124,9 @@ pbase64() {
   cat /tmp/pbase64 | base64 | pbcopy
   rm /tmp/pbase64
 }
+
+if [ -d $HOME/.config/zshrc.d ]; then
+    for file in $HOME/.config/zshrc.d/*.zsh; do
+        source "$file"
+    done
+fi
