@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/Hacking/go
 export GO111MODULE=on
 export WORKON_HOME=$HOME/.virtualenvs
-export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin
+export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 export PYTHONDONTWRITEBYTECODE=1
@@ -126,4 +126,10 @@ pbxml() {
   pbpaste > /tmp/pbxml
   xmllint --format /tmp/pbxml | pbcopy
   rm /tmp/pbxml
+}
+
+pbase64() {
+  pbpaste > /tmp/pbase64
+  cat /tmp/pbase64 | base64 | pbcopy
+  rm /tmp/pbase64
 }
