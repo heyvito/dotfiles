@@ -330,7 +330,8 @@
       "Window Type" : 0,
       "Cursor Type" : 2,
       "Background Image Location" : "",
-      "Blur" : false,
+      "Blur Radius" : 25.331450267673766,
+      "Blur" : true,
       "Badge Color" : {
         "Red Component" : 1,
         "Color Space" : "sRGB",
@@ -371,7 +372,7 @@
         "Alpha Component" : 1,
         "Green Component" : 1
       },
-      "Transparency" : 0,
+      "Transparency" : 0.14232419987314754,
       "Ansi 1 Color" : {
         "Red Component" : 0.9529411792755127,
         "Color Space" : "sRGB",
