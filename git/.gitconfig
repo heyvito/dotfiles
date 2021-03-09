@@ -1,7 +1,7 @@
 [user]
 	name = Vito Sartori
 	email = hey@vito.io
-	signingkey = F98F7B8A
+	signingkey = 9AEB9CC9296AA1D5
 
 [commit]
 	gpgsign = true
