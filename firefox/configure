@@ -26,6 +26,7 @@ add 'dom.vr.enabled' 'false'
 add 'browser.pocket.enabled' 'false'
 add 'extensions.pocket.enabled' 'false'
 add 'browser.uidensity' '1'
-mkdir -p "$profile/chrome"
-cp userChrome.css "$profile/chrome"
-cp -r BigSur "$profile/chrome"
+add 'browser.proton.enabled' 'true'
+add 'browser.proton.tabs.enabled' 'true'
+add 'browser.proton.appmenu.enabled' 'true'
+add 'browser.newtabpage.activity-stream.newNewtabExperience.enabled' 'true'
