@@ -35,13 +35,13 @@ export CLICOLOR=1
 [ -f ~/.envs ] && source ~/.envs
 
 alias curlimg='xargs curl | imgcat'
-alias dcr='docker-compose run --rm $@'
-alias dce='docker-compose exec'
-alias dcup='docker-compose up'
-alias dcupd='docker-compose up -d'
-alias dcp='docker-compose pull $@'
+alias dcr='docker compose run --rm $@'
+alias dce='docker compose exec'
+alias dcup='docker compose up'
+alias dcupd='docker compose up -d'
+alias dcp='docker compose pull $@'
 alias dsa='docker ps -q | xargs docker stop'
-alias dclf='docker-compose logs -f'
+alias dclf='docker compose logs -f'
 alias pip=/usr/local/bin/pip3
 alias ss='slack-status'
 alias please='sudo'
@@ -50,14 +50,16 @@ unalias gr # created by 'git' plugin. Originally aliases to 'git remote'.
 unalias grm # created by 'git' plugin. Originally aliases to 'git rm'.
 unalias gra # created by 'git' plugin. Originally aliases to 'git remote add'.
 
-docker-compose() {
-  wd=$(pwd)
-  cu=$(whoami)
-  if [[ "$wd" =~ ^/Users/$cu/Developer.* ]]; then
-    wd=$(pwd | sed "s/\/Users\/$cu\/Developer\///" | sed "s/\//-/g")
-    export COMPOSE_PROJECT_NAME=$wd
+docker() {
+  if [[ "$1" == "compose" ]]; then
+    wd=$(pwd)
+    cu=$(whoami)
+    if [[ "$wd" =~ ^/Users/$cu/Hacking.* ]]; then
+      wd=$(pwd | sed "s/\/Users\/$cu\/Hacking\///" | sed "s/\//-/g")
+      export COMPOSE_PROJECT_NAME=$wd
+    fi
   fi
-  /usr/local/bin/docker-compose $@
+  /usr/local/bin/docker $@
 }
 
 _gb() {
