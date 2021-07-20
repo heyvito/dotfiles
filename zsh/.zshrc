@@ -22,7 +22,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git sublime osx docker colored-man-pages docker-compose golang)
 
 source $ZSH/oh-my-zsh.sh
-export GOPATH=$HOME/Hacking/go
+export GOPATH=$HOME/Developer/go
 export GO111MODULE=on
 export WORKON_HOME=$HOME/.virtualenvs
 export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin
@@ -53,8 +53,8 @@ unalias gra # created by 'git' plugin. Originally aliases to 'git remote add'.
 docker-compose() {
   wd=$(pwd)
   cu=$(whoami)
-  if [[ "$wd" =~ ^/Users/$cu/Hacking.* ]]; then
-    wd=$(pwd | sed "s/\/Users\/$cu\/Hacking\///" | sed "s/\//-/g")
+  if [[ "$wd" =~ ^/Users/$cu/Developer.* ]]; then
+    wd=$(pwd | sed "s/\/Users\/$cu\/Developer\///" | sed "s/\//-/g")
     export COMPOSE_PROJECT_NAME=$wd
   fi
   /usr/local/bin/docker-compose $@
@@ -83,8 +83,11 @@ grnp() {
   _gb && _gtgh "compare/$BRANCH_NAME?expand=1"
 }
 
-hack() { cd ~/Hacking/$1; }
-compctl -W ~/Hacking/ -/ hack
+dev() { cd ~/Developer/$1; }
+compctl -W ~/Developer/ -/ dev
+
+hack() { echo "\ahack is now dev"; cd ~/Developer/$1; }
+compctl -W ~/Developer/ -/ hack
 
 tlvd() {
   pbpaste \
