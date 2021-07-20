@@ -1,6 +1,14 @@
 {
 	"atomic_save": true,
 	"auto_find_in_selection": true,
+	"binary_file_patterns":
+	[
+		".svn/",
+		".git/",
+		"node_modules/",
+		"bower_components/",
+		".next"
+	],
 	"caret_style": "phase",
 	"color_scheme": "Packages/Celestial/Celestial.tmTheme",
 	"default_line_ending": "unix",
