@@ -135,3 +135,7 @@ if [ -d $HOME/.config/zshrc.d ]; then
         source "$file"
     done
 fi
+
+if [ -f "$HOME/.bin/zsh-extras" ]; then
+  source "$HOME/.bin/zsh-extras"
+fi
