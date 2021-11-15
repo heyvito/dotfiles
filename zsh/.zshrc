@@ -45,6 +45,7 @@ alias dclf='docker compose logs -f'
 alias pip=/usr/local/bin/pip3
 alias ss='slack-status'
 alias please='sudo'
+alias kb='kubectl'
 
 unalias gr # created by 'git' plugin. Originally aliases to 'git remote'.
 unalias grm # created by 'git' plugin. Originally aliases to 'git rm'.
