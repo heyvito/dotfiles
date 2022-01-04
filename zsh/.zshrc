@@ -55,8 +55,8 @@ docker() {
   if [[ "$1" == "compose" ]]; then
     wd=$(pwd)
     cu=$(whoami)
-    if [[ "$wd" =~ ^/Users/$cu/Hacking.* ]]; then
-      wd=$(pwd | sed "s/\/Users\/$cu\/Hacking\///" | sed "s/\//-/g")
+    if [[ "$wd" =~ ^/Users/$cu/Developer.* ]]; then
+      wd=$(pwd | sed "s/\/Users\/$cu\/Developer\///" | sed "s/\//-/g")
       export COMPOSE_PROJECT_NAME=$wd
     fi
   fi
