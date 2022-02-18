@@ -22,19 +22,35 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git sublime macos docker colored-man-pages docker-compose golang)
 
 source $ZSH/oh-my-zsh.sh
-export GOPATH=$HOME/Developer/go
+export GOPATH=$HOME/.go
 export GO111MODULE=on
 export WORKON_HOME=$HOME/.virtualenvs
-export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin:/usr/local/opt/llvm/bin
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ "$(uname -m)" == "arm64" ]]; then
+    if [[ -f /opt/homebrew/bin/brew ]]; then
+      __GEMS_PATH="/opt/homebrew/lib/ruby/gems/3.1.0/bin"
+      __RUBY_PATH="/opt/homebrew/opt/ruby/bin"
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+      export PATH="$__RUBY_PATH:$__GEMS_PATH:$PATH"
+    fi
+  else
+    if [[ -f /usr/local/Homebrew/bin/brew ]]; then
+      __GEMS_PATH="/usr/local/lib/ruby/gems/3.0.0/bin"
+      __RUBY_PATH="/usr/local/opt/ruby/bin"
+      eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+      export PATH="$__RUBY_PATH:$__GEMS_PATH:$PATH"
+    fi
+  fi
+fi
+
+export PATH=$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin
 export PYTHONDONTWRITEBYTECODE=1
 export CLICOLOR=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.envs ] && source ~/.envs
 
-alias curlimg='xargs curl | imgcat'
 alias dcr='docker compose run --rm $@'
 alias dce='docker compose exec'
 alias dcup='docker compose up'
@@ -42,21 +58,19 @@ alias dcupd='docker compose up -d'
 alias dcp='docker compose pull $@'
 alias dsa='docker ps -q | xargs docker stop'
 alias dclf='docker compose logs -f'
-alias pip=/usr/local/bin/pip3
 alias ss='slack-status'
 alias please='sudo'
 alias kb='kubectl'
 
-unalias gr # created by 'git' plugin. Originally aliases to 'git remote'.
+unalias gr  # created by 'git' plugin. Originally aliases to 'git remote'.
 unalias grm # created by 'git' plugin. Originally aliases to 'git rm'.
 unalias gra # created by 'git' plugin. Originally aliases to 'git remote add'.
 
 docker() {
   if [[ "$1" == "compose" ]]; then
     wd=$(pwd)
-    cu=$(whoami)
-    if [[ "$wd" =~ ^/Users/$cu/Developer.* ]]; then
-      wd=$(pwd | sed "s/\/Users\/$cu\/Developer\///" | sed "s/\//-/g")
+    if [[ "$wd" =~ ^/Users/$USER/Developer.* ]]; then
+      wd=$(pwd | sed "s/\/Users\/$USER\/Developer\///" | sed "s/\//-/g")
       export COMPOSE_PROJECT_NAME=$wd
     fi
   fi
@@ -88,9 +102,6 @@ grnp() {
 
 dev() { cd ~/Developer/$1; }
 compctl -W ~/Developer/ -/ dev
-
-hack() { echo "\ahack is now dev"; cd ~/Developer/$1; }
-compctl -W ~/Developer/ -/ hack
 
 tlvd() {
   pbpaste \
@@ -135,8 +146,4 @@ if [ -d $HOME/.config/zshrc.d ]; then
     for file in $HOME/.config/zshrc.d/*.zsh; do
         source "$file"
     done
-fi
-
-if [ -f "$HOME/.bin/zsh-extras" ]; then
-  source "$HOME/.bin/zsh-extras"
 fi
