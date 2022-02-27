@@ -10,7 +10,7 @@
 		".next"
 	],
 	"caret_style": "phase",
-	"color_scheme": "Packages/Celestial/Celestial.tmTheme",
+	"color_scheme": "Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
@@ -22,7 +22,7 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"rulers":
 	[
