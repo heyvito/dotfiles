@@ -372,7 +372,7 @@
         "Alpha Component" : 1,
         "Green Component" : 1
       },
-      "Transparency" : 0.14232419987314754,
+      "Transparency" : 0,
       "Ansi 1 Color" : {
         "Red Component" : 0.9529411792755127,
         "Color Space" : "sRGB",
