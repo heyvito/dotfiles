@@ -354,7 +354,7 @@
         "Alpha Component" : 1,
         "Green Component" : 0.8981062038630232
       },
-      "ASCII Ligatures" : true,
+      "ASCII Ligatures" : false,
       "Name" : "Default",
       "Cursor Text Color" : {
         "Color Space" : "sRGB",
@@ -404,7 +404,7 @@
       "Guid" : "276F1793-2DB8-48E2-AF1F-34152C8E8C36",
       "Use Non-ASCII Font" : true,
       "Custom Directory" : "No",
-      "Normal Font" : "VictorMonoNerdFontCompleteM-Regular 12",
+      "Normal Font" : "BerkeleyMono-Regular 12",
       "Link Color" : {
         "Red Component" : 0,
         "Color Space" : "sRGB",
