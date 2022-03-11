@@ -1,0 +1,14 @@
+[
+	{
+		"caption": "File: Rename",
+		"command": "side_bar_rename"
+	},
+	{
+		"caption": "File: Show in Finder",
+		"command": "side_bar_reveal"
+	},
+	{
+		"caption": "File: Move",
+		"command": "side_bar_move"
+	}
+]
