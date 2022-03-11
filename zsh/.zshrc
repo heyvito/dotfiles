@@ -36,7 +36,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     fi
   else
     if [[ -f /usr/local/Homebrew/bin/brew ]]; then
-      __GEMS_PATH="/usr/local/lib/ruby/gems/3.0.0/bin"
+      __GEMS_PATH="/usr/local/lib/ruby/gems/3.1.0/bin"
       __RUBY_PATH="/usr/local/opt/ruby/bin"
       eval "$(/usr/local/Homebrew/bin/brew shellenv)"
       export PATH="$__RUBY_PATH:$__GEMS_PATH:$PATH"
