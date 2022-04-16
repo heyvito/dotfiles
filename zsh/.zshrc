@@ -19,7 +19,7 @@ DEFAULT_USER="heyvito"
 ZSH_THEME="theto"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git sublime macos docker colored-man-pages docker-compose golang)
+plugins=(git macos docker colored-man-pages docker-compose golang)
 
 source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/.go
