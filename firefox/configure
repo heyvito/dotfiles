@@ -2,31 +2,12 @@
 
 # Find Firefox default profile
 profile=$(find "$HOME/Library/Application Support/Firefox/Profiles" -name '*.default-nightly' || (echo 'Firefox Nightly profile not found.' && exit 1))
+mkdir "$profile/chrome"
+echo '#forward-button { display: none; }' > "$profile/chrome/userChrome.css"
 settings="$profile/user.js"
-echo "Updating $settings..."
-hostname="$(hostname)"
 echo "" > "$settings"
 function add() {
     echo "user_pref(\"$1\", $2);" >> "$settings"
 }
 
-add 'identity.fxaccounts.account.device.name' "\"${hostname/.local}\""
-add 'browser.search.region' '"US"'
-add 'devtools.theme' '"dark"'
-add "findbar.highlightAll" 'true'
-add "privacy.trackingprotection.enabled" 'true'
-add "privacy.trackingprotection.socialtracking.enabled" 'true'
-add "privacy.donottrackheader.enabled" 'true'
-add "privacy.purge_trackers.date_in_cookie_database" '0'
-add "signon.rememberSignons" 'false'
-add "browser.fixup.domainwhitelist.cooper.local" 'true'
 add 'toolkit.legacyUserProfileCustomizations.stylesheets' 'true'
-add 'dom.vr.openvr.enabled' 'false'
-add 'dom.vr.enabled' 'false'
-add 'browser.pocket.enabled' 'false'
-add 'extensions.pocket.enabled' 'false'
-add 'browser.uidensity' '1'
-add 'browser.proton.enabled' 'true'
-add 'browser.proton.tabs.enabled' 'true'
-add 'browser.proton.appmenu.enabled' 'true'
-add 'browser.newtabpage.activity-stream.newNewtabExperience.enabled' 'true'
