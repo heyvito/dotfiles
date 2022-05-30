@@ -16,15 +16,16 @@ autoload -Uz compinit
 
 ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="heyvito"
-ZSH_THEME="theto"
+ZSH_THEME="diagon"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git macos docker colored-man-pages docker-compose golang)
+plugins=(git macos sublime docker colored-man-pages docker-compose golang)
 
 source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/.go
 export GO111MODULE=on
 export WORKON_HOME=$HOME/.virtualenvs
+export ZLE_RPROMPT_INDENT=0
 
 if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(uname -m)" == "arm64" ]]; then
@@ -171,3 +172,4 @@ __goenv_load_file() {
 }
 
 chpwd_functions+=(__goenv_handler);
+export PATH="/usr/local/opt/libpq/bin:$PATH"
