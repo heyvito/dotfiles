@@ -3,7 +3,7 @@
 # Find Firefox default profile
 profile=$(find "$HOME/Library/Application Support/Firefox/Profiles" -name '*.default-nightly' || (echo 'Firefox Nightly profile not found.' && exit 1))
 mkdir "$profile/chrome"
-echo '#forward-button { display: none; }' > "$profile/chrome/userChrome.css"
+cp userChrome.css "$profile/chrome"
 settings="$profile/user.js"
 echo "" > "$settings"
 function add() {
