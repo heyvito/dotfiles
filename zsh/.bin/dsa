@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Stop All (DSA)
+set -e -o pipefail
+docker ps -q | xargs docker stop

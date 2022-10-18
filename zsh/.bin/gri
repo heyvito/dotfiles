@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to Repository Issues (GRI)
+set -e -o pipefail
+_gb "issues" | xargs open

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Compose Log and Follow (DCLF)
+set -e -o pipefail
+docker compose log -f $@

@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+gb_base="$(git remote get-url origin \
+            | sed -E 's/.*(@|\/\/)(.*)\.git/\2/' \
+            | sed 's/:/\//g')"
+
+[[ -n "$gb_base" ]] || exit 1
+
+echo "https://$gb_base/$1"

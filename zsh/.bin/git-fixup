@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+git add -A
+git commit --amend --no-edit
+if [[ "$1" == "--push" ]]; then
+    git push --force-with-lease
+fi

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to Repository Actions (GRA)
+set -e -o pipefail
+_gb "actions" | xargs open

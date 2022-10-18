@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Compose Pull (DCP)
+set -e -o pipefail
+docker compose pull $@

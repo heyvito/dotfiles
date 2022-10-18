@@ -13,4 +13,4 @@
 --type-set=slim=slim
 
 --ignore-dir=.gem
-
+--ignore-dir=coverage

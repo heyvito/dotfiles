@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Compose Exec (DCE)
+set -e -o pipefail
+docker compose exec $@

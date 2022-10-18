@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to Repository Milestones (GRIM)
+set -e -o pipefail
+_gb "milestones" | xargs open

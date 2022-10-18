@@ -1,0 +1,5 @@
+#!/bin/bash
+# Go to Repository and create a New Pull request (GRNP)
+set -e -o pipefail
+BRANCH_NAME="$(git symbolic-ref HEAD | sed 's/refs\/heads\///g')"
+_gb "compare/$BRANCH_NAME?expand=1" | xargs open

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Compose Up & Daemonize (DCUPD)
+set -e -o pipefail
+docker compose up -d $@

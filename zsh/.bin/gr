@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to Repository (GR)
+set -e -o pipefail
+_gb | xargs open

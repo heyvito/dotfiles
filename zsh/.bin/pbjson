@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e -o pipefail
+pbpaste > /tmp/pbjson
+cat /tmp/pbjson | jq | pbcopy
+rm /tmp/pbjson

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to Repository Issues and create a New (GRIN)
+set -e -o pipefail
+_gb "issues/new/choose" | xargs open

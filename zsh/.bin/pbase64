@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e -o pipefail
+
+pbpaste > /tmp/pbase64
+cat /tmp/pbase64 | base64 | pbcopy
+rm /tmp/pbase64

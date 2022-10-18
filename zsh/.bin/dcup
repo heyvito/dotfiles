@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Compose Up (DCUP)
+set -e -o pipefail
+docker compose up $@

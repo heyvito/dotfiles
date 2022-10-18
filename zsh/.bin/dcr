@@ -1,0 +1,4 @@
+#!/bin/bash
+# Docker Compose Run (DCR)
+set -e -o pipefail
+docker compose run --rm -it $@

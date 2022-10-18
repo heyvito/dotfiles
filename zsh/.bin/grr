@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to Repository Releases (GRR)
+set -e -o pipefail
+_gb "releases" | xargs open
