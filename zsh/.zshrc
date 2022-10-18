@@ -16,7 +16,7 @@ autoload -Uz compinit
 
 ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="heyvito"
-ZSH_THEME="diagon"
+ZSH_THEME="smol"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(git macos sublime colored-man-pages goenv)
