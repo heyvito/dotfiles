@@ -58,9 +58,4 @@ unalias gra # created by 'git' plugin. Originally aliases to 'git remote add'.
 
 dev() { cd ~/Developer/$1; }
 compctl -W ~/Developer/ -/ dev
-
-if [ -d $HOME/.config/zshrc.d ]; then
-    for file in $HOME/.config/zshrc.d/*.zsh; do
-        source "$file"
-    done
-fi
+gac() { cd "$(pwd)-chart" }
