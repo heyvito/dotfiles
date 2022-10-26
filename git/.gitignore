@@ -1,3 +1,5 @@
 .DS_Store
 .idea/
 */.idea/
+.rspec_status
+.byebug_history
