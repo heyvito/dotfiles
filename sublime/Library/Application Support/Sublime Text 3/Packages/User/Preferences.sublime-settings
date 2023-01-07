@@ -1,5 +1,5 @@
 {
-	"atomic_save": true,
+	"atomic_save": false,
 	"auto_find_in_selection": true,
 	"binary_file_patterns":
 	[

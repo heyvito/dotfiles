@@ -3,3 +3,4 @@
 */.idea/
 .rspec_status
 .byebug_history
+.nova/
