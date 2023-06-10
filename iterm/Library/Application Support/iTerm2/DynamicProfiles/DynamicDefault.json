@@ -181,7 +181,6 @@
       "Description": "Default",
       "Disable Window Resizing": true,
       "Draw Powerline Glyphs": true,
-      "Dynamic Profile Filename": "/Users/vitosartori/Library/Application Support/iTerm2/DynamicProfiles/DynamicDefault.json",
       "Flashing Bell": false,
       "Guid": "276F1793-2DB8-48E2-AF1F-34152C8E8C36",
       "Horizontal Spacing": 1,
@@ -369,7 +368,7 @@
       "Minimum Contrast": 0,
       "Mouse Reporting": true,
       "Name": "Default",
-      "Non Ascii Font": "VictorMonoNerdFontCompleteM-Regular 12",
+      "Non Ascii Font": "BerkeleyMonoNF-Regular 12",
       "Non-ASCII Anti Aliased": true,
       "Normal Font": "BerkeleyMono-Regular 12",
       "Option Key Sends": 2,
@@ -397,8 +396,7 @@
       "Use Non-ASCII Font": true,
       "Vertical Spacing": 1,
       "Visual Bell": true,
-      "Window Type": 0,
-      "Working Directory": "/Users/vitosartori"
+      "Window Type": 0
     }
   ]
 }

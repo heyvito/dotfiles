@@ -28,7 +28,7 @@ export ZLE_RPROMPT_INDENT=0
 export CLICOLOR=1
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  ruby_version="3.1.0"
+  ruby_version="3.2.0"
   brew_prefix="/usr/local"
   brew_exec="${brew_prefix}/Homebrew/bin/brew"
   if [[ "$(uname -m)" == "arm64" ]]; then
@@ -46,7 +46,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 export PATH=$HOME/.bin:$HOME/.bin.priv:$PATH:$GOPATH/bin:$HOME/.cargo/bin
-export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.envs ] && source ~/.envs
