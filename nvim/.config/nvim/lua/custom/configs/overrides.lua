@@ -1,3 +1,5 @@
+local cmp = require('cmp')
+
 local M = {}
 
 M.treesitter = {

@@ -7,16 +7,17 @@ local plugins = {
   -- Override plugin definition options
 
   {
-    "nvim-cmp",
-     opts = {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      preselect = cmp.PreselectMode.None,
+      completion = {
+        completeopt = "menu,menuone,noinsert,noselect",
+      },
       mapping = {
-        ["<CR>"] = function(callback)
-          callback()
-        end,
-        ["<C-CR>"] = cmp.mapping.confirm {
+        ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Insert,
-          select = true,
-        },
+          select = false,
+        }),
         ["<ESC>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.close()
@@ -49,7 +50,7 @@ local plugins = {
           "s",
         }),
       }
-    }
+    },
   },
 
   {
