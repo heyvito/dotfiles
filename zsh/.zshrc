@@ -19,7 +19,7 @@ DEFAULT_USER="heyvito"
 ZSH_THEME="smol"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git macos sublime colored-man-pages goenv)
+plugins=(git macos colored-man-pages goenv)
 
 source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/.go
@@ -28,7 +28,6 @@ export ZLE_RPROMPT_INDENT=0
 export CLICOLOR=1
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  ruby_version="3.2.0"
   brew_prefix="/usr/local"
   brew_exec="${brew_prefix}/Homebrew/bin/brew"
   if [[ "$(uname -m)" == "arm64" ]]; then
@@ -38,6 +37,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   if [[ -x "$brew_exec" ]]; then
     eval "$("$brew_exec" shellenv)"
+    ruby_version="$(ls "${brew_prefix}/lib/ruby/gems/" | sort --version-sort -r | head -n 1)"
     ruby_path="${brew_prefix}/opt/ruby/bin"
     gems_path="${brew_prefix}/lib/ruby/gems/$ruby_version/bin"
     export PATH="${ruby_path}:${gems_path}:$PATH"
