@@ -13,4 +13,4 @@ if [[ "$1" == "compose" ]]; then
         unset COMPOSE_PROEJCT_NAME
     fi
 fi
-exec /usr/local/bin/docker "$@"
+exec $(brew --prefix)/opt/docker/bin/docker "$@"
