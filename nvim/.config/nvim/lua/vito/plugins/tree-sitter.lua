@@ -4,6 +4,10 @@ return {
     local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
     ts_update()
   end,
+  dependencies = {
+    "RRethy/nvim-treesitter-endwise",
+    "andymass/vim-matchup",
+  },
   config = function()
     require('nvim-treesitter.configs').setup {
       -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -25,6 +29,8 @@ return {
         additional_vim_regex_highlighting = { "ruby" },
       },
       indent = { enable = true, disable = { "ruby" } },
+      endwise = { enable = true },
+      matchup = { enable = true },
     }
   end
 }
