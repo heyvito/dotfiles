@@ -42,7 +42,11 @@ return {
     {'rafamadriz/friendly-snippets'},
   },
   config = function()
-    local lsp = require('lsp-zero').preset('recommended')
+    local lsp = require('lsp-zero').preset({
+      manage_nvim_cmp = {
+        set_sources = 'recommended'
+      }
+    })
 
     lsp.ensure_installed({
       'bashls',

@@ -22,14 +22,16 @@ local maps = {
     ["<C-j>"] = "<C-w>j",
     ["<C-k>"] = "<C-w>k",
     -- tabs
+    ["<leader>ta"] = "<cmd>$tabnew<CR>",
     ["<leader>tx"] = "<cmd>VBufClose<CR>",
-    ["<leader>t]"] = "<cmd>BufferLineCycleNext<CR>",
-    ["<leader>t["] = "<cmd>BufferLineCyclePrev<CR>",
+    ["<leader>t,"] = "<cmd>tabp<CR>",
+    ["<leader>t."] = "<cmd>tabn<CR>",
+    ["<leader>tq"] = "<cmd>tabclose<CR>",
     ["<leader>kb"] = "<cmd>VShowHideTree<CR>",
     ["<leader>e"]  = "<cmd>VToggleTree<CR>",
     -- telescope
-    ["<leader>ff"] = "<cmd> Telescope find_files <CR>",
-    ["<leader>fa"] = "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
+    ["<leader>ff"] = "<cmd> Telescope find_files theme=dropdown previewer=false <CR>",
+    ["<leader>fa"] = "<cmd> Telescope find_files follow=true no_ignore=true hidden=true theme=dropdown previewer=false<CR>",
     ["<leader>fw"] = "<cmd> Telescope live_grep <CR>",
     ["<leader>fb"] = "<cmd> Telescope buffers <CR>",
     ["<leader>fh"] = "<cmd> Telescope help_tags <CR>",
@@ -47,12 +49,12 @@ for mode, inner in pairs(maps) do
   end
 end
 
-vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true })
-vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true })
-vim.api.nvim_set_keymap('n', 'D', '"_D', { noremap = true })
-vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true })
+vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true }) -- x = delete (no copy)
+vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true }) -- d = delete (no copy)
+vim.api.nvim_set_keymap('n', 'D', '"_D', { noremap = true }) -- D = delete (no copy)
+vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true }) -- d = delete (no copy) (visual mode)
 
-vim.api.nvim_set_keymap('n', '<leader>d', '"+d', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>d', '"+d', { noremap = true }) -- leader d = CUT
 vim.api.nvim_set_keymap('n', '<leader>D', '"+D', { noremap = true })
 vim.api.nvim_set_keymap('v', '<leader>d', '"+d', { noremap = true })
 

@@ -10,6 +10,14 @@ return {
   config = {
     filesystem = {
       follow_current_file = true,
-    }
+    },
+    window = {
+      mappings = {
+        ["p"] = { "toggle_preview", config = { use_float = true } },
+        ["<C-h>"] = "open_split",
+        ["<C-v>"] = "open_vsplit",
+        ["<C-t>"] = "open_tabnew",
+      },
+    },
   }
 }

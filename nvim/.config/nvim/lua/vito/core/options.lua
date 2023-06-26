@@ -43,3 +43,5 @@ vim.g.editorconfig = true
 
 vim.g.fixeol = true
 vim.opt.clipboard = "unnamedplus"
+
+opt.showtabline = 2
