@@ -38,10 +38,11 @@ opt.incsearch = true
 opt.scrolloff = 8
 opt.updatetime = 50
 opt.colorcolumn = "80"
-
-vim.g.editorconfig = true
-
-vim.g.fixeol = true
-vim.opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
 opt.showtabline = 2
+opt.cmdheight = 0
+
+vim.g.editorconfig = true
+vim.g.fixeol = true
+
