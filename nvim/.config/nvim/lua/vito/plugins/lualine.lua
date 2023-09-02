@@ -8,7 +8,7 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   config = {
-    theme = 'rose-pine',
+    theme = 'noirbuddy',
     options = {
       icons_enabled = true,
       component_separators = '',

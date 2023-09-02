@@ -8,32 +8,36 @@ local maps = {
   n = {
     ["s"] = "<cmd>w<CR>",
     ["<ESC>"] = "<cmd>nohl<CR>",
+
     -- avoid the worst place in the universe
     ["Q"] = "<NOP>",
+
     -- do not copy on 'x'
     ["x"] = '"_x',
-    -- splits
-    ["<leader>sv"] = "<C-w>v",
-    ["<leader>sh"] = "<C-w>s",
+
+    -- [[ Splits ]]
+    ["<leader>sv"] = "<cmd>vnew<CR>",
+    ["<leader>sh"] = "<cmd>new<CR>",
     ["<leader>se"] = "<C-w>=",
     ["<leader>sx"] = "<cmd>close<CR>",
     ["<C-h>"] = "<C-w>h",
     ["<C-l>"] = "<C-w>l",
     ["<C-j>"] = "<C-w>j",
     ["<C-k>"] = "<C-w>k",
-    -- tabs
-    ["<leader>ta"] = "<cmd>$tabnew<CR>",
-    ["<leader>tx"] = "<cmd>VBufClose<CR>",
-    ["<leader>t,"] = "<cmd>tabp<CR>",
-    ["<leader>t."] = "<cmd>tabn<CR>",
-    ["<leader>tq"] = "<cmd>tabclose<CR>",
+
+    -- [[ Tabs, Neotree ]]
+    ["<leader>tn"] = "<cmd>tabnew<CR>",
+    ["<leader>tx"] = "<cmd>tabc<CR>",
     ["<leader>kb"] = "<cmd>VShowHideTree<CR>",
     ["<leader>e"]  = "<cmd>VToggleTree<CR>",
-    -- telescope
-    ["<leader>ff"] = "<cmd> Telescope find_files theme=dropdown previewer=false <CR>",
-    ["<leader>fa"] = "<cmd> Telescope find_files follow=true no_ignore=true hidden=true theme=dropdown previewer=false<CR>",
+
+    -- [[ Telescope ]]
+    ["<leader>ff"] = "<cmd> Telescope find_files hidden=true theme=dropdown layout-strategy=horizontal<CR>",
+    -- fd is ff, but without the previewer
+    ["<leader>fd"] = "<cmd> Telescope find_files hidden=true theme=dropdown previewer=false <CR>",
+    ["<leader>fa"] = "<cmd> Telescope find_files follow=true no_ignore=true hidden=true theme=dropdown <CR>",
     ["<leader>fw"] = "<cmd> Telescope live_grep <CR>",
-    ["<leader>fb"] = "<cmd> Telescope buffers <CR>",
+    ["<leader>fb"] = "<cmd> Telescope buffers sort_mru=true ignore_current_buffer=true <CR>",
     ["<leader>fh"] = "<cmd> Telescope help_tags <CR>",
     ["<leader>fo"] = "<cmd> Telescope oldfiles <CR>",
     ["<leader>fg"] = "<cmd> Telescope git_files <CR>",
@@ -49,6 +53,7 @@ for mode, inner in pairs(maps) do
   end
 end
 
+-- [[ Stop x + clipboard madness ]]
 vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true }) -- x = delete (no copy)
 vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true }) -- d = delete (no copy)
 vim.api.nvim_set_keymap('n', 'D', '"_D', { noremap = true }) -- D = delete (no copy)

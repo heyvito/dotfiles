@@ -2,17 +2,17 @@ return {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
   dependencies = {
-    -- LSP Support
-    {'neovim/nvim-lspconfig'},             -- Required
-    {                                      -- Optional
+    -- [[ LSP Support ]]
+    {'neovim/nvim-lspconfig'},
+    {
       'williamboman/mason.nvim',
       build = function()
         pcall(vim.cmd, 'MasonUpdate')
       end,
     },
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    {'williamboman/mason-lspconfig.nvim'},
 
-    -- Autocompletion
+    -- [[ Autocompletion ]]
     {
       'hrsh7th/nvim-cmp',
       dependencies = {
@@ -31,14 +31,13 @@ return {
           end,
         },
       }
-    },     -- Required
+    },
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/cmp-path'},
     {'saadparwaiz1/cmp_luasnip'},
-    {'hrsh7th/cmp-nvim-lsp'}, -- Required
+    {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/cmp-nvim-lua'},
-
-    {'L3MON4D3/LuaSnip'},     -- Required
+    {'L3MON4D3/LuaSnip'},
     {'rafamadriz/friendly-snippets'},
   },
   config = function()
@@ -52,7 +51,7 @@ return {
       'bashls',
       'clangd',
       'cssls',
-      'ruby_ls',
+      'solargraph',
     })
 
     local cmp = require('cmp')

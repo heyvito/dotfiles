@@ -1,10 +1,3 @@
-vim.api.nvim_create_user_command(
-  'VBufClose',
-  function()
-    local mb = require('mini.bufremove')
-    mb.delete()
-  end, {})
-
 local is_neotree_focused = function()
     -- Get our current buffer number
     local bufnr = vim.api.nvim_get_current_buf and vim.api.nvim_get_current_buf() or vim.fn.bufnr()

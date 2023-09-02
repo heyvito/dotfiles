@@ -26,4 +26,3 @@ require('vito.core.autos')
 require('lazy').setup('vito.plugins')
 require('vito.core.commands')
 require('vito.core.keymaps')
-

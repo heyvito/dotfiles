@@ -4,7 +4,7 @@ return {
   branch = "v2.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
   config = {
@@ -17,6 +17,19 @@ return {
         ["<C-h>"] = "open_split",
         ["<C-v>"] = "open_vsplit",
         ["<C-t>"] = "open_tabnew",
+      },
+    },
+    default_component_configs = {
+      git_status = {
+        symbols = {
+          added     = "+",
+          modified  = "e",
+          untracked = "?",
+          ignored   = "i",
+          unstaged  = "",
+          staged    = "",
+          conflict  = "!",
+        }
       },
     },
   }

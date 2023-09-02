@@ -12,7 +12,6 @@ opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
-
 opt.wrap = false
 
 opt.ignorecase = true
@@ -40,9 +39,8 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 opt.clipboard = "unnamedplus"
 
-opt.showtabline = 2
+opt.showtabline = 0
 opt.cmdheight = 0
 
 vim.g.editorconfig = true
 vim.g.fixeol = true
-
