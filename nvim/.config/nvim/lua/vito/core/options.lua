@@ -44,3 +44,7 @@ opt.cmdheight = 0
 
 vim.g.editorconfig = true
 vim.g.fixeol = true
+
+opt.list = true
+opt.listchars:append "space:⋅"
+opt.listchars:append "eol:↴"
