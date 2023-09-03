@@ -1,8 +1,29 @@
 #!/bin/bash
 
 set -e
-git add -A
+
+while (( "$#" )); do
+  case "$1" in
+    -a)
+      ADD_ALL=1
+      ;;
+    --push|-p)
+      PUSH=1;
+      ;;
+    *)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+if [[ $ADD_ALL == 1 ]]; then
+  git add -A
+fi
+
 git commit --amend --no-edit
-if [[ "$1" == "--push" ]]; then
-    git push --force-with-lease
+
+if [[ $PUSH == 1 ]]; then
+  git push --force-with-lease
 fi

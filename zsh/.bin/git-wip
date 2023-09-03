@@ -1,6 +1,10 @@
 #!/bin/bash
 
 set -e
-git add -A
+
+if [[ "$1" == "-a" ]]; then
+  git add -A
+fi
+
 git commit -m "WIP"
 git push
