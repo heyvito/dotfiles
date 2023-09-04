@@ -7,7 +7,7 @@ return {
   config = function()
     require('telescope').setup {
       defaults = {
-        file_ignore_patterns = { "^./.git", "^node_modules", "^./.nova" },
+        file_ignore_patterns = { ".git/", "node_modules", ".nova/" },
         sort_mru = true,
         sorting_strategy = 'ascending',
         layout_config = { prompt_position = 'top' },
