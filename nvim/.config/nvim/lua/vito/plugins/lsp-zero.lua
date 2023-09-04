@@ -58,8 +58,9 @@ return {
     local cmp_mappings = lsp.defaults.cmp_mappings({
       ['<Down>'] = cmp.mapping.select_next_item(cmp_select),
       ['<Up>'] = cmp.mapping.select_prev_item(cmp_select),
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<C-Space>'] = cmp.mapping.complete(),
+      ['<Esc>'] = cmp.mapping.abort(),
     })
 
     lsp.set_preferences({
