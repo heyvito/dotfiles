@@ -32,7 +32,7 @@ local maps = {
     ["<leader>e"]  = "<cmd>VToggleTree<CR>",
 
     -- [[ Telescope ]]
-    ["<leader>ff"] = "<cmd> Telescope find_files hidden=true theme=dropdown layout-strategy=horizontal<CR>",
+    ["<leader>ff"] = "<cmd> Telescope find_files hidden=true <CR>",
     -- fd is ff, but without the previewer
     ["<leader>fd"] = "<cmd> Telescope find_files hidden=true theme=dropdown previewer=false <CR>",
     ["<leader>fa"] = "<cmd> Telescope find_files follow=true no_ignore=true hidden=true theme=dropdown <CR>",
