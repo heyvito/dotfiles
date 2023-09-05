@@ -30,6 +30,7 @@ local maps = {
     ["<leader>tx"] = "<cmd>tabc<CR>",
     ["<leader>kb"] = "<cmd>VShowHideTree<CR>",
     ["<leader>e"]  = "<cmd>VToggleTree<CR>",
+    ["<leader>l"]  = "<cmd>b#<CR>",
 
     -- [[ Telescope ]]
     ["<leader>ff"] = "<cmd> Telescope find_files hidden=true <CR>",
