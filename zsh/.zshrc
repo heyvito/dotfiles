@@ -59,3 +59,11 @@ unalias gra # created by 'git' plugin. Originally aliases to 'git remote add'.
 dev() { cd ~/Developer/$1; }
 compctl -W ~/Developer/ -/ dev
 gac() { cd "$(pwd)-chart" }
+rr() {
+  local target_path=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [[ $? != 0 ]]; then
+    echo "Fatal: Not in a git repository"
+    return
+  fi
+  cd "$target_path"
+}
