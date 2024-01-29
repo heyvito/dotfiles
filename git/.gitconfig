@@ -26,3 +26,5 @@
 	enabled = 1
 [core]
 	excludesfile = ~/.gitignore
+[branch]
+  sort = -committerdate
