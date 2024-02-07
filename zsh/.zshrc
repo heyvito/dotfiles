@@ -67,3 +67,5 @@ rr() {
   fi
   cd "$target_path"
 }
+
+eval "$(atuin init zsh --disable-up-arrow)"
