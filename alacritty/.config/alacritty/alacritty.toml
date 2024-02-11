@@ -15,14 +15,12 @@ bindings = [
 ]
 
 [font]
-size = 13
+size = 14
 
 [font.normal]
 family = "BerkeleyMono Nerd Font"
 
 [window]
 decorations = "none"
+padding = { x = 7, y = 0 }
 
-[window.padding]
-x = 7
-y = 0
