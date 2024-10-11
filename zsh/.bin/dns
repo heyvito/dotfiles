@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Current DNS set to $(networksetup -getdnsservers Ethernet)"
+if [[ "$1" == "local" ]]; then
+sudo networksetup -setdnsservers Ethernet 10.0.1.4
+else
+sudo networksetup -setdnsservers Ethernet 8.8.8.8
+fi
+
+echo "New DNS set to $(networksetup -getdnsservers Ethernet)"
