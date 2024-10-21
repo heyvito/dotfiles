@@ -1,4 +1,5 @@
 # vim: set expandtab ts=2 sw=2 :
+
 #    ,ggg,         ,gg
 #   dP""Y8a       ,8P        I8
 #   Yb, `88       d8'        I8
@@ -30,8 +31,14 @@ export CLICOLOR=1
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH=$HOME/.bin:$HOME/.bin.priv:/opt/homebrew/opt/ruby/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.envs ] && source ~/.envs
+function autosource() {
+  [ -f "$1" ] && source "$1";
+}
+
+autosource "~/.fzf.zsh"
+autosource "~/.envs"
+autosource "/opt/homebrew/opt/chruby/share/chruby/chruby.sh"
+autosource "/opt/homebrew/opt/chruby/share/chruby/auto.sh"
 
 alias please='sudo'
 
@@ -52,3 +59,4 @@ rr() {
 }
 
 eval "$(atuin init zsh --disable-up-arrow)"
+command -v chruby 2>&1 >/dev/null && chruby 3.3.5
