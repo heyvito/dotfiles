@@ -1,0 +1,34 @@
+clipboard-read = allow
+clipboard-write = allow
+window-theme = system
+theme = Aardvark Blue
+
+background = #102040
+foreground = #dddddd
+selection-background = #bfdbfe
+selection-foreground = #000000
+cursor-color = #007acc
+palette = 0=#191919
+palette = 1=#aa342e
+palette = 2=#4b8c0f
+palette = 3=#dbba00
+palette = 4=#1370d3
+palette = 5=#c43ac3
+palette = 6=#008eb0
+palette = 7=#bebebe
+palette = 8=#454545
+palette = 9=#f05b50
+palette = 10=#95dc55
+palette = 11=#ffe763
+palette = 12=#60a4ec
+palette = 13=#e26be2
+palette = 14=#60b6cb
+palette = 15=#f7f7f7
+
+font-family = "Berkeley Mono"
+keybind = command+right=text:\x05
+keybind = command+left=text:\x01
+keybind = command+backspace=text:\x15
+keybind = option+right=esc:f
+keybind = option+left=esc:b
+keybind = option+backspace=text:\x17
