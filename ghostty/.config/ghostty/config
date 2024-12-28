@@ -1,29 +1,40 @@
 clipboard-read = allow
 clipboard-write = allow
 window-theme = system
-theme = Aardvark Blue
+cursor-style = underline
+cursor-style-blink = false
+window-inherit-working-directory = false
 
-background = #102040
-foreground = #dddddd
-selection-background = #bfdbfe
-selection-foreground = #000000
-cursor-color = #007acc
-palette = 0=#191919
-palette = 1=#aa342e
-palette = 2=#4b8c0f
-palette = 3=#dbba00
-palette = 4=#1370d3
-palette = 5=#c43ac3
-palette = 6=#008eb0
-palette = 7=#bebebe
-palette = 8=#454545
-palette = 9=#f05b50
-palette = 10=#95dc55
-palette = 11=#ffe763
-palette = 12=#60a4ec
-palette = 13=#e26be2
-palette = 14=#60b6cb
-palette = 15=#f7f7f7
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = #cdd6f4
+macos-icon-screen-color = #1e1e2e
+
+theme = catppuccin-mocha
+background = #1e1e2e
+foreground = #cdd6f4
+selection-background = #585b70
+selection-foreground = #cdd6f4
+cursor-color = #f5e0dc
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#a6adc8
+palette = 8=#585b70
+palette = 9=#f37799
+palette = 10=#89d88b
+palette = 11=#ebd391
+palette = 12=#74a8fc
+palette = 13=#f2aede
+palette = 14=#6bd7ca
+palette = 15=#bac2de
+palette = 16=#3ddbd9
 
 font-family = "Berkeley Mono"
 keybind = command+right=text:\x05
