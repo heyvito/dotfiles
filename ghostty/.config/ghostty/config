@@ -4,6 +4,7 @@ window-theme = system
 cursor-style = underline
 cursor-style-blink = false
 window-inherit-working-directory = false
+term = xterm-256color
 
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
