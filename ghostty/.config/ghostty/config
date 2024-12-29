@@ -43,4 +43,3 @@ keybind = command+left=text:\x01
 keybind = command+backspace=text:\x15
 keybind = option+right=esc:f
 keybind = option+left=esc:b
-keybind = option+backspace=text:\x17
