@@ -28,3 +28,6 @@
 	excludesfile = ~/.gitignore
 [branch]
   sort = -committerdate
+
+[push]
+autoSetupRemote = true
