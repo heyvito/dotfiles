@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+target="$1"
+shift
+if [[ ! "$target" =~ ^[^/]+\/.* ]]; then
+  target="heyvito/$target"
+fi
+
+if [[ ! "$target" =~ \.git$ ]]; then
+  target="$target.git"
+fi
+
+git clone git@github.com:"$target" $@

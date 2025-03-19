@@ -29,7 +29,7 @@ export ZLE_RPROMPT_INDENT=0
 export CLICOLOR=1
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH=$HOME/.bin:$HOME/.bin.priv:/opt/homebrew/opt/ruby/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin
+export PATH=$HOME/.bin:$HOME/.bin.priv:$HOME/.local/bin:/opt/homebrew/opt/ruby/bin:$PATH:$GOPATH/bin:$HOME/.cargo/bin
 
 function autosource() {
   [ -f "$1" ] && source "$1";
@@ -59,4 +59,4 @@ rr() {
 }
 
 eval "$(atuin init zsh --disable-up-arrow)"
-command -v chruby 2>&1 >/dev/null && chruby 3.3.5
+command -v chruby 2>&1 >/dev/null && chruby 3.4.2
