@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+bold="$(tput bold)"
+normal="$(tput sgr0)"
+input="$1"
+
+declare -A table=(
+	["a"]="Alfa"
+	["n"]="November"
+	["b"]="Bravo"
+	["o"]="Oscar"
+	["c"]="Charlie"
+	["p"]="Papa"
+	["d"]="Delta"
+	["q"]="Quebec"
+	["e"]="Echo"
+	["r"]="Romeo"
+	["f"]="Foxtrot"
+	["s"]="Sierra"
+	["g"]="Golf"
+	["t"]="Tango"
+	["h"]="Hotel"
+	["u"]="Uniform"
+	["i"]="India"
+	["v"]="Victor"
+	["j"]="Juliett"
+	["w"]="Whiskey"
+	["k"]="Kilo"
+	["x"]="Xray"
+	["l"]="Lima"
+	["y"]="Yankee"
+	["m"]="Mike"
+	["z"]="Zulu"
+)
+
+function strongify() {
+    local first="${1:0:1}"
+    local rest="${1:1}"
+    echo "${bold}${first}${normal}${rest}"
+}
+
+function natoize() {
+	local lower_input=$(echo "$input" | tr "[:upper:]" "[:lower:]")
+	for (( i=0; i<${#lower_input}; i++ )); do
+		local char="${lower_input:$i:1}"
+		if [[ "$char" == " " ]]; then
+			echo ""
+		else
+			name="${table[$char]}"
+			if [[ -n "$name" ]]; then
+				echo "$(strongify "$name")"
+			else
+				echo "$char"
+			fi
+		fi
+	done
+}
+
+function print_table() {
+	echo "┌─────────┬──────────┐"
+	echo "│ $(strongify "Alfa")    │ $(strongify "November") │"
+	echo "│ $(strongify "Bravo")   │ $(strongify "Oscar")    │"
+	echo "│ $(strongify "Charlie") │ $(strongify "Papa")     │"
+	echo "│ $(strongify "Delta")   │ $(strongify "Quebec")   │"
+	echo "│ $(strongify "Echo")    │ $(strongify "Romeo")    │"
+	echo "│ $(strongify "Foxtrot") │ $(strongify "Sierra")   │"
+	echo "│ $(strongify "Golf")    │ $(strongify "Tango")    │"
+	echo "│ $(strongify "Hotel")   │ $(strongify "Uniform")  │"
+	echo "│ $(strongify "India")   │ $(strongify "Victor")   │"
+	echo "│ $(strongify "Juliett") │ $(strongify "Whiskey")  │"
+	echo "│ $(strongify "Kilo")    │ $(strongify "Xray")     │"
+	echo "│ $(strongify "Lima")    │ $(strongify "Yankee")   │"
+	echo "│ $(strongify "Mike")    │ $(strongify "Zulu")     │"
+	echo "└─────────┴──────────┘"
+}
+
+if [[ -n "$input" ]]; then
+	natoize
+else
+	print_table
+fi
