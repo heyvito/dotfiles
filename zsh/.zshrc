@@ -57,7 +57,9 @@ rr() {
   cd "$target_path"
 }
 
-eval "$(atuin init zsh --disable-up-arrow)"
-[[ -f .ruby-version ]] && \
+eval "$(atuin init zsh --disable-up-arrow)" || true
+
+if [[ -f .ruby-version ]]; then
   command -v chruby 2>&1 >/dev/null && \
   chruby "$(cat $HOME/.ruby-version)"
+fi
