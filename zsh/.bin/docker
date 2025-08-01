@@ -7,7 +7,7 @@ set -e -o pipefail
 if [[ "$1" == "compose" ]]; then
     wd=$(pwd)
     if [[ "$wd" =~ ^/Users/$USER/Developer.* ]]; then
-        wd=$(pwd | sed "s/\/Users\/$USER\/Developer\///" | sed "s/\//-/g")
+        wd=$(pwd | sed "s/\/Users\/$USER\/Developer\///" | sed "s/\//-/g" | tr '[:upper:]' '[:lower:]')
         export COMPOSE_PROJECT_NAME="$wd"
     else
         unset COMPOSE_PROEJCT_NAME

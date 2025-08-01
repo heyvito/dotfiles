@@ -2,9 +2,20 @@
 
 set -e
 
-if [[ "$1" == "-a" ]]; then
-  git add -A
-fi
+usage() { echo "Usage: $0 [-a] [-p]" 1>&2; exit 1; }
 
+ADD_ALL=0
+PUSH=0
+
+while getopts "ap" o; do
+    case "${o}" in
+        a) ADD_ALL=1 ;;
+        p) PUSH=1 ;;
+        *) usage; exit 1; ;;
+    esac
+done
+shift $((OPTIND-1))
+
+[[ "$ADD_ALL" == "1" ]] && git add -A
 git commit -m "WIP"
-git push
+[[ "$PUSH" == "1" ]] && git push
