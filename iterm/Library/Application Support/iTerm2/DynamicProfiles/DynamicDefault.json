@@ -23,7 +23,7 @@
       "Horizontal Spacing": 1,
       "Idle Code": 0,
       "Minimum Contrast": 0,
-      "Mouse Reporting": true,
+      "Mouse Reporting": false,
       "Name": "Default",
       "Non Ascii Font": "BerkeleyMonoNF-Regular 13",
       "Non-ASCII Anti Aliased": true,
